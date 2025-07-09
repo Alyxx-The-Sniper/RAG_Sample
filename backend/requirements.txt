@@ -1,0 +1,4 @@
+## Backend
+uvicorn[standard]==0.24.0
+fastapi==0.111
+pinecone==7.3.0

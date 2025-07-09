@@ -1,0 +1,22 @@
+services:
+  backend_v2:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rag-backend-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+
+  frontend_v2:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: rag-frontend-api
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend_v2
+    env_file:
+      - .env
